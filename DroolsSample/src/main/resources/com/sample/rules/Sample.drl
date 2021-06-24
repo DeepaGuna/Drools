@@ -3,17 +3,24 @@ package com.sample.rules
 import com.sample.DroolsTest.Message;
 
 rule "GoodBye"
-
+salience 100 
+no-loop true
     when
-        Message( status == Message.GOODBYE, myMessage : message )
+        m : Message( status == Message.GOODBYE, myMessage : message )
     then
     	
         System.out.println( myMessage );
         
+       //m.setMessage( "Hello World" );
+        //m.setStatus( Message.HELLO );
+        //update(m);
+        
+        
 end
  
 rule "Hello World"
-
+salience 50
+no-loop true
     when
         m : Message( status == Message.HELLO, myMessage : message )
     then

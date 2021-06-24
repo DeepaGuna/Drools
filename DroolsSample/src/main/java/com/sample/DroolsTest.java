@@ -19,7 +19,7 @@ public class DroolsTest {
             // go !
             Message message = new Message();
             message.setMessage("Hello World123");
-            message.setStatus(Message.GOODBYE);
+            message.setStatus(Message.HELLO);
             kSession.insert(message);
             kSession.fireAllRules();
         } catch (Throwable t) {

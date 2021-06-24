@@ -1,0 +1,40 @@
+//created on: May 7, 2021
+
+package com.sample.rules
+
+//list any import classes here.
+
+import com.sample.*
+
+//declare any global variables here
+
+
+rule "Good morning"
+	 when
+		$P:Person(time>=0 &&time<12);
+	then
+		$P.setMessage("Good Morning "+$P.getName());
+end
+
+
+rule "Good afternoon"
+	when
+		$P:Person(time>=12 &&time<16);
+	then
+		$P.setMessage("Good Afternoon "+$P.getName());
+end
+
+
+rule "Good evening"
+	when
+		$P:Person(time>=16 &&time<=20);
+	then
+		$P.setMessage("Good Evening "+$P.getName());
+end
+
+rule "Good night"
+	when
+		$P:Person(time>=20 &&time<=24);
+	then
+		$P.setMessage("Good Night "+$P.getName());
+end
